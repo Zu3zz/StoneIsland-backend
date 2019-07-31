@@ -7,7 +7,15 @@ class InitManager {
     InitManager.app = app
     InitManager.initLoadRouters()
     InitManager.loadHttpException()
+    InitManager.loadConfig()
   }
+
+  static loadConfig(path = ''){
+    const configPath = path || process.cwd() + '/config/config.js'
+    const config = require(configPath)
+    global.config = config
+  }
+
   static initLoadRouters() {
     // 遍历循环 添加Router路由
     const apiDirectory = `${process.cwd()}/app/api`

@@ -6,6 +6,9 @@ const catchError = async (ctx, next) => {
   try {
     await next()
   } catch (error) {
+    if(global.config.environment === 'dev'){
+      throw error
+    }
     if (error instanceof HttpException) {
       ctx.body = {
         msg: error.msg,
@@ -13,6 +16,13 @@ const catchError = async (ctx, next) => {
         request: `${ctx.method} ${ctx.path}`
       }
       ctx.status = error.code
+    } else {
+      ctx.body = {
+        msg: 'sry, a unknown error occur',
+        error_code: 999,
+        request: `${ctx.method} ${ctx.path}`
+      }
+      ctx.status = 500
     }
   }
 }
