@@ -1,5 +1,6 @@
 const Router = require('koa-router')
 
+
 const {RegisterValidator}  = require('../../validators/validator')
 const {User} = require('../../models/user')
 
@@ -10,6 +11,7 @@ const router = new Router({
 // 注册 新增数据 put get delete
 
 router.get('/register', async (ctx) => {
+  // new 一个类 实例化
   const v = await new RegisterValidator().validate(ctx)
   const user = {
     id: 1,
