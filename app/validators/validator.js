@@ -4,18 +4,19 @@ const {
 } = require('../../core/lin-validator-v2')
 
 const {User} = require('../models/user')
+const {LoginType} = require('../lib/enum')
 
 class PositiveIntegerValidator extends LinValidator {
-  constructor(){
+  constructor() {
     super()
     this.id = [
-      new Rule('isInt','需要是正整数',{min:1})
+      new Rule('isInt', '需要是正整数', {min: 1})
     ]
   }
 }
 
-class RegisterValidator extends LinValidator{
-  constructor(){
+class RegisterValidator extends LinValidator {
+  constructor() {
     super()
     this.email = [
       new Rule('isEmail', '不符合Email规范')
@@ -25,39 +26,71 @@ class RegisterValidator extends LinValidator{
         min: 6,
         max: 32
       }),
-      new Rule('matches','密码不符合规范','^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]')
+      new Rule('matches', '密码不符合规范', '^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]')
     ]
     this.password2 = this.password1
     this.nickname = [
-      new Rule('isLength','昵称不符合长度规范',{
+      new Rule('isLength', '昵称不符合长度规范', {
         min: 4,
         max: 32
       })
     ]
   }
-
-  validatePassword(vals){
+  
+  validatePassword(vals) {
     const psw1 = vals.body.password1
     const psw2 = vals.body.password2
-    if(psw1 !== psw2){
+    if (psw1 !== psw2) {
       throw new Error('两个密码必须相同')
     }
   }
-
-  async validateEmail(vals){
+  
+  async validateEmail(vals) {
     const email = vals.body.email
     const user = await User.findOne({
-      where:{
-        email:email
+      where: {
+        email: email
       }
     })
-    if(user){
+    if (user) {
       throw new Error('email已存在')
+    }
+  }
+}
+
+class TokenValidator extends LinValidator {
+  constructor() {
+    super()
+    this.account = [
+      new Rule('isLength', '不符合账号规范', {
+        min: 4,
+        max: 32
+      })
+    ]
+    this.secret = [
+      // 是否必须要传入？
+      // 1. 可以为空
+      // 2. 也可以不为空
+      new Rule('isOptional'),
+      new Rule('isLength', '至少6个字符', {
+        min: 6,
+        max: 128
+      })
+    ]
+    // type
+  }
+  validateLoginType(vals){
+    if(!vals.body.type){
+      throw new Error('type是必须参数')
+    }
+    if(!LoginType.isThisType(vals.body.type)){
+      throw new Error('type参数不合法')
     }
   }
 }
 
 module.exports = {
   PositiveIntegerValidator,
-  RegisterValidator
+  RegisterValidator,
+  TokenValidator
 }
