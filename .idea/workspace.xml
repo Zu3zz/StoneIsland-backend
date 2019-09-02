@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="09ed06d6-181b-4be7-92c3-3dff9a5012cd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/middlewares/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/book.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/v1/classic.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/v1/classic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/http-exception.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/http-exception.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares/exceptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/exceptions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="09ed06d6-181b-4be7-92c3-3dff9a5012cd" name="Default Changelist" comment="user token check finished" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -32,11 +22,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/middlewares/auth.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
+            <state relative-caret-position="360">
+              <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -62,8 +52,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/http-exception.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="60" column="11" selection-start-line="60" selection-start-column="11" selection-end-line="60" selection-end-column="11" />
+            <state relative-caret-position="790">
+              <caret line="52" column="1" lean-forward="true" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="863">
+              <caret line="43" column="1" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -104,8 +103,8 @@
         <option value="$PROJECT_DIR$/core/db.js" />
         <option value="$PROJECT_DIR$/app/api/v1/classic.js" />
         <option value="$PROJECT_DIR$/middlewares/exceptions.js" />
-        <option value="$PROJECT_DIR$/core/http-exception.js" />
         <option value="$PROJECT_DIR$/middlewares/auth.js" />
+        <option value="$PROJECT_DIR$/core/http-exception.js" />
       </list>
     </option>
   </component>
@@ -224,7 +223,7 @@
       <workItem from="1566831020308" duration="3474000" />
       <workItem from="1566837901502" duration="66000" />
       <workItem from="1566883284830" duration="1309000" />
-      <workItem from="1567409353225" duration="3408000" />
+      <workItem from="1567409353225" duration="3650000" />
     </task>
     <task id="LOCAL-00001" summary="user token check finished">
       <created>1566837947178</created>
@@ -237,7 +236,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10562000" />
+    <option name="totallyTimeSpent" value="10804000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="840" y="23" width="840" height="1027" extended-state="0" />
@@ -321,13 +320,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="43" column="1" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/api/v1/token.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7">
@@ -375,13 +367,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/http-exception.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="60" column="11" selection-start-line="60" selection-start-column="11" selection-end-line="60" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -391,8 +376,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/middlewares/auth.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
+        <state relative-caret-position="360">
+          <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/http-exception.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="790">
+          <caret line="52" column="1" lean-forward="true" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="863">
+          <caret line="43" column="1" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
         </state>
       </provider>
     </entry>
