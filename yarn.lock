@@ -2773,9 +2773,9 @@ sequelize-pool@^2.3.0:
   integrity sha1-ZPH+h0QigXLEdPUwYEthM75kmT0=
 
 sequelize@^5.6.1:
-  version "5.10.1"
-  resolved "https://registry.npm.taobao.org/sequelize/download/sequelize-5.10.1.tgz#ac12614fee2fd40417c4df585dcc28ba2ccf2c57"
-  integrity sha1-rBJhT+4v1AQXxN9YXcwouizPLFc=
+  version "5.15.1"
+  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-5.15.1.tgz#f130ded17e74395ae7f5e265277c99577e895afb"
+  integrity sha512-DCzzJYvJLMKnyf8G3at2A+yM9M2fSQmTmuOYIpCWM8Gjqx3XfgNTd1NkuyPWFoi1/d1AXQsN2VDPXkPczida8A==
   dependencies:
     bluebird "^3.5.0"
     cls-bluebird "^2.1.0"
